@@ -185,7 +185,7 @@
             ClientSize = new Size(743, 450);
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "antena tester betta";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
