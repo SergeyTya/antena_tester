@@ -79,7 +79,7 @@ namespace antena_tester
                 List<byte> req = new List<byte>() { 1, 43, 14, 0x1, 0x1, 177, 183 };
 
                 fw = new FileWriter();
-                serial_write(req, 50);
+                serial_write(req, 55);
                 //port.ReadExisting();
                 //port.Write(req.ToArray(), 0, req.Count);
 
@@ -154,7 +154,7 @@ namespace antena_tester
                         0x00, 0x02,
                         0x00, 0x09
                     };
-                    serial_write(req, 18);
+                    serial_write(req, 23);
 
                 } else if (data[1] == 0x4)
                 {
@@ -236,7 +236,7 @@ namespace antena_tester
                         0x00, 0x00,
                         0x00, 0x04
                     };
-                    serial_write(req1, 6);
+                    serial_write(req1, 8);
 
                     break;
                 case SlaveState.onRdy:
@@ -245,7 +245,7 @@ namespace antena_tester
                         0x00, 0x00,
                         0x00, 0x01
                     };
-                    serial_write(req2, 6);
+                    serial_write(req2, 8);
                     break;
                 case SlaveState.onRun:
                     List<byte> req3 = new List<byte>() {
@@ -254,7 +254,7 @@ namespace antena_tester
                         (byte) ((speed&0xFF00)>>8), (byte) (speed&0x00FF)
                     };
 
-                    serial_write(req3, 6);
+                    serial_write(req3, 8);
                 break;
             }
 
