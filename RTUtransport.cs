@@ -79,9 +79,9 @@ namespace antena_tester
                 List<byte> req = new List<byte>() { 1, 43, 14, 0x1, 0x1, 177, 183 };
 
                 fw = new FileWriter();
-                // serial_write(req, 0x44);
-                port.ReadExisting();
-                port.Write(req.ToArray(), 0, req.Count);
+                serial_write(req, 50);
+                //port.ReadExisting();
+                //port.Write(req.ToArray(), 0, req.Count);
 
             }
             catch(Exception e) { 
@@ -91,7 +91,6 @@ namespace antena_tester
 
         private void serial_write(List<byte> req, int byteToRead) {
 
-            this.Log().Info("rcv");
             UInt16 crc = chMBCRC16(req.ToArray(), (ushort)req.Count);
 
             req.Add((byte)(0x00FF & crc));
